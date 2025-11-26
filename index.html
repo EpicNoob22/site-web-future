@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 ULTRA MAXI STYLÉ - Le Site Le Plus Épique 🔥</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- PARTICLES CANVAS -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- 3D BACKGROUND -->
+    <div id="three-container"></div>
+    
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="cyber-loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-core"></div>
+            </div>
+            <div class="loading-text">
+                <span data-text="INITIALIZING..."><!-- INITIALIZING... --></span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="mega-nav" id="mega-nav">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-rocket logo-inner"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">ULTRA</span>
+                        <span class="logo-sub">MAXI STYLÉ</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active" data-section="home">
+                            <span class="nav-icon"><i class="fas fa-home"></i></span>
+                            <span class="nav-text">Accueil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-section="about">
+                            <span class="nav-icon"><i class="fas fa-user-astronaut"></i></span>
+                            <span class="nav-text">À Propos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link" data-section="services">
+                            <span class="nav-icon"><i class="fas fa-cogs"></i></span>
+                            <span class="nav-text">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link" data-section="portfolio">
+                            <span class="nav-icon"><i class="fas fa-briefcase"></i></span>
+                            <span class="nav-text">Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link" data-section="team">
+                            <span class="nav-icon"><i class="fas fa-users"></i></span>
+                            <span class="nav-text">Équipe</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-section="contact">
+                            <span class="nav-icon"><i class="fas fa-paper-plane"></i></span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="nav-cta">
+                    <span class="cta-text">Démarrer</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <button class="mobile-toggle" id="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="scroll-progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon"><i class="fas fa-star"></i></span>
+                    <span class="badge-text">Le Futur du Web est Là</span>
+                    <span class="badge-pulse"></span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line"><span class="word">BIENVENUE</span></span>
+                    <span class="title-line"><span class="word gradient-text">DANS LE</span></span>
+                    <span class="title-line mega-text"><span class="word glitch-text" data-text="FUTUR">FUTUR</span></span>
+                </h1>
+
+                <p class="hero-description">
+                    <span class="desc-line">Nous créons des expériences digitales</span>
+                    <span class="desc-line"><strong class="highlight">extraordinaires</strong> qui propulsent</span>
+                    <span class="desc-line">votre business vers les <strong class="highlight">étoiles</strong> ✨</span>
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-label">Projets Réalisés</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="150">0</div>
+                        <div class="stat-label">Clients Satisfaits</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="25">0</div>
+                        <div class="stat-label">Awards Gagnés</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span>Voir Nos Projets</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        <span>Découvrir Plus</span>
+                    </a>
+                </div>
+
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+                    <span class="scroll-text">Scroll pour explorer</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <div class="hologram-ring ring-1"></div>
+                    <div class="hologram-ring ring-2"></div>
+                    <div class="hologram-ring ring-3"></div>
+                    <div class="hero-3d-object" id="hero-3d"></div>
+                    <div class="floating-icons">
+                        <div class="float-icon"><i class="fab fa-react"></i></div>
+                        <div class="float-icon"><i class="fab fa-node-js"></i></div>
+                        <div class="float-icon"><i class="fab fa-python"></i></div>
+                        <div class="float-icon"><i class="fab fa-figma"></i></div>
+                        <div class="float-icon"><i class="fab fa-docker"></i></div>
+                        <div class="float-icon"><i class="fab fa-aws"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-social">
+            <div class="social-line"></div>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <div class="social-line"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-info-circle"></i> À PROPOS</span>
+                <h2 class="section-title"><span class="title-accent">Qui</span> Sommes-Nous?</h2>
+                <p class="section-subtitle">Une équipe de passionnés qui transforme vos idées en réalité digitale</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-visual">
+                    <div class="visual-wrapper">
+                        <div class="main-image">
+                            <div class="image-frame">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Notre équipe" class="about-img">
+                            </div>
+                        </div>
+                        <div class="experience-badge">
+                            <span class="badge-number">10+</span>
+                            <span class="badge-text">Années d'Expérience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <div class="text-block">
+                        <h3 class="about-heading"><i class="fas fa-rocket"></i> Notre Mission</h3>
+                        <p>Nous sommes une agence digitale <strong>avant-gardiste</strong> spécialisée dans la création d'expériences web immersives et innovantes.</p>
+                    </div>
+                    <div class="text-block">
+                        <h3 class="about-heading"><i class="fas fa-lightbulb"></i> Notre Vision</h3>
+                        <p>Nous croyons que le web de demain se construit aujourd'hui. C'est pourquoi nous repoussons constamment les limites de la créativité.</p>
+                    </div>
+
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Web Development</span>
+                                <span class="skill-percent">98%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="98"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Mobile Development</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Digital Marketing</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h4 class="feature-title">Ultra Rapide</h4>
+                    <p class="feature-desc">Sites optimisés pour des performances maximales</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 class="feature-title">100% Sécurisé</h4>
+                    <p class="feature-desc">Protection de niveau entreprise garantie</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4 class="feature-title">Responsive</h4>
+                    <p class="feature-desc">Parfait sur tous les appareils</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h4 class="feature-title">Support 24/7</h4>
+                    <p class="feature-desc">Assistance continue à votre service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag"><i class="fas fa-cogs"></i> NOS SERVICES</span>
+                <h2 class="section-title">Ce Que Nous <span class="title-accent">Faisons</span></h2>
+                <p class="section-subtitle">Des solutions complètes pour propulser votre présence digitale</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="service-title">Développement Web</h3>
+                    <p class="service-desc">Sites web modernes avec les dernières technologies</p>
+                    <ul class="service-list">
+                        <li>React / Vue / Angular</li>
+                        <li>Node.js / Python</li>
+                        <li>WordPress / Shopify</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>1500€</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="card-badge">POPULAIRE</div>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="service-title">Applications Mobile</h3>
+                    <p class="service-desc">Apps natives et cross-platform iOS/Android</p>
+                    <ul class="service-list">
+                        <li>React Native / Flutter</li>
+                        <li>Swift / Kotlin</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>5000€</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-desc">Interfaces utilisateur intuitives et mémorables</p>
+                    <ul class="service-list">
+                        <li>Wireframing & Prototyping</li>
+                        <li>Design System</li>
+                        <li>User Research</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>800€</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="service-title">SEO & Marketing</h3>
+                    <p class="service-desc">Stratégies digitales pour booster votre visibilité</p>
+                    <ul class="service-list">
+                        <li>Audit & Optimisation SEO</li>
+                        <li>Google Ads / Meta Ads</li>
+                        <li>Content Marketing</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>500€/mois</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3 class="service-title">Cloud & DevOps</h3>
+                    <p class="service-desc">Infrastructure scalable et déploiement automatisé</p>
+                    <ul class="service-list">
+                        <li>AWS / Google Cloud / Azure</li>
+                        <li>Docker / Kubernetes</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>2000€</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="service-title">IA & Automation</h3>
+                    <p class="service-desc">Solutions intelligentes pour automatiser vos processus</p>
+                    <ul class="service-list">
+                        <li>Chatbots & Assistants</li>
+                        <li>Machine Learning</li>
+                        <li>Process Automation</li>
+                    </ul>
+                    <div class="service-price"><span>À partir de</span><strong>3000€</strong></div>
+                    <a href="#contact" class="service-btn">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="process-section">
+                <h3 class="process-title">Notre Processus</h3>
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4>Découverte</h4>
+                        <p>Analyse de vos besoins</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h4>Design</h4>
+                        <p>Création des maquettes</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <h4>Développement</h4>
+                        <p>Codage et intégration</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <h4>Lancement</h4>
+                        <p>Déploiement et suivi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag"><i class="fas fa-briefcase"></i> PORTFOLIO</span>
+                <h2 class="section-title">Nos <span class="title-accent">Réalisations</span></h2>
+                <p class="section-subtitle">Découvrez nos projets les plus impressionnants</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600" alt="LuxuryStore">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">E-commerce</span>
+                            <h3 class="project-title">LuxuryStore</h3>
+                            <p>Boutique en ligne haut de gamme</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600" alt="FitTracker">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">Application Mobile</span>
+                            <h3 class="project-title">FitTracker Pro</h3>
+                            <p>App fitness avec IA</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" alt="TechFlow">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">Branding</span>
+                            <h3 class="project-title">TechFlow Identity</h3>
+                            <p>Identité visuelle complète</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="Analytics Hub">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">Dashboard</span>
+                            <h3 class="project-title">Analytics Hub</h3>
+                            <p>Tableau de bord temps réel</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="action-btn"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="CryptoWallet">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">FinTech</span>
+                            <h3 class="project-title">CryptoWallet</h3>
+                            <p>Portefeuille crypto sécurisé</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600" alt="SaaS Platform">
+                        <div class="portfolio-overlay">
+                            <span class="project-category">UI/UX</span>
+                            <h3 class="project-title">SaaS Platform</h3>
+                            <p>Design d'une plateforme SaaS</p>
+                            <div class="project-actions">
+                                <a href="#" class="action-btn"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-value" data-count="500">0</div>
+                    <div class="stat-label">Projets Complétés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                    <div class="stat-value" data-count="150">0</div>
+                    <div class="stat-label">Clients Heureux</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-coffee"></i></div>
+                    <div class="stat-value" data-count="9999">0</div>
+                    <div class="stat-label">Tasses de Café</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-value" data-count="1000000">0</div>
+                    <div class="stat-label">Lignes de Code</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag"><i class="fas fa-users"></i> NOTRE ÉQUIPE</span>
+                <h2 class="section-title">Les <span class="title-accent">Cerveaux</span> Derrière la Magie</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Alexandre Martin">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Alexandre Martin</h3>
+                        <p class="member-role">CEO & Fondateur</p>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="Sophie Dubois">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Sophie Dubois</h3>
+                        <p class="member-role">Directrice Créative</p>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400" alt="Thomas Bernard">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Thomas Bernard</h3>
+                        <p class="member-role">Lead Developer</p>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400" alt="Emma Laurent">
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Emma Laurent</h3>
+                        <p class="member-role">Marketing Manager</p>
+                    </div>
+                    <div class="member-socials">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> TÉMOIGNAGES</span>
+                <h2 class="section-title">Ce Que Disent Nos <span class="title-accent">Clients</span></h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Une équipe exceptionnelle qui a transformé notre vision en réalité. Le résultat dépasse toutes nos attentes!"</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Client">
+                        <div class="author-info">
+                            <h4>Jean-Pierre Dupont</h4>
+                            <p>CEO, TechCorp France</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Professionnalisme, créativité et réactivité. Ultra Maxi Stylé a su comprendre nos besoins parfaitement!"</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Client">
+                        <div class="author-info">
+                            <h4>Marie Lefevre</h4>
+                            <p>Directrice, StartupXYZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Notre site e-commerce a vu ses conversions augmenter de 300% grâce à leur travail incroyable!"</p>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Client">
+                        <div class="author-info">
+                            <h4>Lucas Moreau</h4>
+                            <p>Fondateur, E-Shop Premium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="control-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="control-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> CONTACT</span>
+                <h2 class="section-title">Lançons Votre <span class="title-accent">Projet</span></h2>
+                <p class="section-subtitle">Prêt à transformer vos idées en réalité? Contactez-nous!</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-content">
+                            <h4>Notre Adresse</h4>
+                            <p>123 Avenue du Digital<br>75001 Paris, France</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-content">
+                            <h4>Téléphone</h4>
+                            <p>+33 1 23 45 67 89</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>hello@ultramaxi.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Votre Nom" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Votre Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="Téléphone">
+                            </div>
+                            <div class="form-group">
+                                <select id="subject" required>
+                                    <option value="">Choisir un sujet</option>
+                                    <option value="web">Développement Web</option>
+                                    <option value="mobile">Application Mobile</option>
+                                    <option value="design">Design UI/UX</option>
+                                    <option value="marketing">Marketing Digital</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Votre Message" required></textarea>
+                        </div>
+                        <div class="form-group budget-group">
+                            <label>Budget estimé: <span id="budget-value">5000€</span></label>
+                            <input type="range" id="budget" min="500" max="50000" value="5000" step="500">
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Envoyer le Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à <span class="highlight">Révolutionner</span> Votre Présence Digitale?</h2>
+                <p>Rejoignez les 150+ entreprises qui nous font confiance</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-light">Démarrer un Projet <i class="fas fa-rocket"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mega-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <i class="fas fa-rocket"></i>
+                            <div class="logo-text">
+                                <span class="logo-main">ULTRA</span>
+                                <span class="logo-sub">MAXI STYLÉ</span>
+                            </div>
+                        </a>
+                        <p class="footer-desc">Nous créons des expériences digitales extraordinaires qui propulsent votre business vers les étoiles.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#home">Accueil</a></li>
+                            <li><a href="#about">À Propos</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#team">Équipe</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Développement Web</a></li>
+                            <li><a href="#">Applications Mobile</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">SEO & Marketing</a></li>
+                            <li><a href="#">Cloud & DevOps</a></li>
+                            <li><a href="#">IA & Automation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Restez informé des dernières tendances!</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Votre email...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 <strong>ULTRA MAXI STYLÉ</strong>. Tous droits réservés. Créé avec <i class="fas fa-heart"></i> à Paris</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Mentions Légales</a>
+                    <a href="#">Confidentialité</a>
+                    <a href="#">CGV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
